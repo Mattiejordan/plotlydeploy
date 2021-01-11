@@ -77,21 +77,30 @@ function buildCharts(sample) {
     // var yticks = otu_ids.slice(0,10).map(otu_ids).reverse();
     // var yticks = otu_ids.slice(0,10);
     // var sorted = yticks.map(yticks => yticks.reverse());
-    var yticks = otu_ids.slice(0, 10).map(otu_ids => `OTU ${otu_ids}`).reverse();
-
+    // var yticks = otu_ids.slice(0, 10).map(otu_ids => `OTU ${otu_ids}`).reverse();
+    var yticks = sample_values.slice(0,10);
     // 8. Create the trace for the bar chart. 
+    // var barData = [
+    //   {
+    //     x: sample_values.slice(0,10).reverse(),
+    //     y: yticks,
+    //     text: otu_labels.slice(0,10).reverse(),
+    //     type: "bar"
+    //   }
+      
+    // ];
     var barData = [
       {
-        x: sample_values.slice(0,10).reverse(),
+        x: otu_ids,
         y: yticks,
-        text: otu_labels.slice(0,10).reverse(),
-        type: "bar"
+        type: "bar",
+        orientation: "h"
       }
-      
     ];
+
     // 9. Create the layout for the bar chart. 
     var barLayout = {
-      title: "Belly Button Data"
+      title: "Belly Button Top 10 Cultures Found Data",
      
     };
     // 10. Use Plotly to plot the data with the layout. 
