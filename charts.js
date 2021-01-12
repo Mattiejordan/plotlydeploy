@@ -104,7 +104,7 @@ function buildCharts(sample) {
 
     // 9. Create the layout for the bar chart. 
     var barLayout = {
-      title: "Belly Button Top 10 Cultures Found Data",
+      title: "Belly Button Top 10 Cultures Found per OTU Data",
      
     };
     // 10. Use Plotly to plot the data with the layout. 
@@ -160,7 +160,7 @@ function buildCharts(sample) {
         marker: {
           color: otu_ids,
           size: sample_values,
-          colorscale: 'Blackbody'
+          colorscale: 'Bluered'
           },
       }
    
@@ -246,13 +246,13 @@ function buildCharts(sample) {
         value: parseFloat(result.wfreq),
         type: "indicator",
         mode: "gauge+number",
-        title: { text: "Belly Button Cleaning Frequency"},
+        title: { text: "Belly Button Weekly Cleaning Frequency"},
         gauge: {
           axis: { range: [null, 10]},
           bar: { color: "red"},
           steps: [
             { range: [0,2], color: "black"},
-            { range: [2,4], color: "green"},
+            { range: [2,4], color: "brown"},
             { range: [4,6], color: "yellowgreen"},
             { range: [6,8], color: "yellow"},
             { range: [8,10], color: "lightblue"},
